@@ -16,7 +16,24 @@ colorDisplay.innerText = randomColors();
 var messageDisplay = document.getElementById("message");
 var h1 = document.getElementById("h1h1");
 var resetButton = document.getElementById("reset");
+var resetScore = document.getElementById("resetScore");
 pickedColor = randomColors();
+
+resetScore.addEventListener("click", function(){
+    myScore = 0;
+    document.getElementById("score").innerText = 0;
+    colors = generateRandomColors(6); 
+    pickedColor = randomColors();
+    resetButton.innerText = "New Color";
+    colorDisplay.innerText = pickedColor;
+    for(i = 0; i < squares.length; i++){
+        //add initial colors to squares
+        squares[i].style.backgroundColor = colors[i];
+    }
+    h1.style.backgroundColor = "rgb(35, 35, 99)";
+    messageDisplay.innerText = "";
+})
+
 
 //button newcolors
 resetButton.addEventListener("click", function(){
@@ -36,7 +53,8 @@ resetButton.addEventListener("click", function(){
 for(i = 0; i < squares.length; i++){
     //add initial colors to squares
     squares[i].style.backgroundColor = colors[i];
-    
+    //score
+    var myScore = 0;
     
     //add click listeners to squares
     squares[i].addEventListener("click", function(){
@@ -44,6 +62,8 @@ for(i = 0; i < squares.length; i++){
         
         if (colorSquare === pickedColor) {
             messageDisplay.innerText = "Correct";
+            myScore = myScore + 4;
+            document.getElementById("score").innerText = myScore;
             h1.style.backgroundColor = colorSquare;
             resetButton.innerText = "Play Again?";
             var j = 0;
@@ -54,9 +74,13 @@ for(i = 0; i < squares.length; i++){
         }else {
             messageDisplay.innerText = "Try Again";
             this.style.backgroundColor = "rgb(35, 35, 99)";
+            myScore = myScore - 1;
+            document.getElementById("score").innerText = myScore;
         }
     });
+    
 }
+
 
 
 //GENERATE NEW RANDOM COLORS

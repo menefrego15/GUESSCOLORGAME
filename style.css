@@ -61,3 +61,20 @@ h1{
     
 }
 
+#resetScore {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 4px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgb(90, 90, 184);
+    
+}
+
+#score {
+    color: green;
+    font-weight: 900;
+    text-transform: uppercase;
+
+}
