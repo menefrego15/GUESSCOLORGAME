@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(35, 35, 99);
+    background-color: rgb(24, 24, 112);
 }
 
 .square {
@@ -68,13 +68,36 @@ h1{
     margin: 4px;
     font-weight: 900;
     text-transform: uppercase;
-    color: rgb(90, 90, 184);
+    color: rgb(230, 126, 8);
     
 }
 
 #score {
+    margin: 4px;
     color: green;
     font-weight: 900;
     text-transform: uppercase;
-
 }
+
+#manche {
+    margin: 4px;
+    color: rgb(255, 0, 0);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+@media (max-width: 400px) {
+    body {
+        background-color: rgb(89, 98, 190);
+    }
+
+    #container {
+        margin-top: 40%;
+    }
+
+    .square {
+        margin-top: 12px;
+    }
+}
+
+
